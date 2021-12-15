@@ -2,15 +2,14 @@ extends layout
 
 block content
     h1 New Book
-    div
-      h2.error Oooops!
+      h2.error=oops
       ul.error
-        li Title is required
-        li Author is required
+        li=title
+        li=author
 
 
 
-    form(method="post" action="/new-book/post") 
+    form(method="post") 
       p
         label(for='title') Title
         input#title(name='title' type='text' value=article.title)
@@ -26,4 +25,4 @@ block content
       p
         input(type='submit' value='Create New Book')
       p
-        a.button(href='all_books.html') Cancel
+        a.button(href='/') Cancel

@@ -8,13 +8,13 @@ router.get('/new-book', async(req, res, next) => {
   });
 
 
-router.post('/new-book/post', async(req, res, next) => {
+router.post('/new-book/', async(req, res, next) => {
     try{
     const book = await Book.create(req.body);
     console.log(book); 
     res.redirect('/');
     } catch {
-      res.render('new-book', {article: {}, test: ""})
+      res.render('new-book', {article: {}, oops: "Oooops!", title: "Title is required", author: "Author is required"})
     }
   });
 module.exports = router;
