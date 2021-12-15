@@ -2,7 +2,15 @@ extends layout
 
 block content
     h1 New Book
-    form(method="post") 
+    div
+      h2.error Oooops!
+      ul.error
+        li Title is required
+        li Author is required
+
+
+
+    form(method="post" action="/new-book/post") 
       p
         label(for='title') Title
         input#title(name='title' type='text' value=article.title)

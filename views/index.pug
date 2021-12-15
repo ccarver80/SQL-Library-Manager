@@ -15,7 +15,7 @@ block content
         each book in Books  
           tr 
             td
-              a(href="book_detail.html")= book.title
+              a(href="update-book/" + book.id)= book.title
               td= book.author
               td= book.genre
               td= book.year
