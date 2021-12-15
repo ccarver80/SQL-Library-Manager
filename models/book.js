@@ -16,11 +16,21 @@ module.exports = (sequelize, DataTypes) => {
   Book.init({
     title: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false, 
+      validate: {
+        notEmpty: {
+          msg: "Please enter a value for Title"
+        }
+      }
     },
     author: {
       type: DataTypes.STRING,
       allowNull: false, 
+      validate: {
+        notEmpty: {
+          msg: "Please enter a value for Author"
+        }
+      }
     },
     genre: DataTypes.STRING,
     year: DataTypes.INTEGER
